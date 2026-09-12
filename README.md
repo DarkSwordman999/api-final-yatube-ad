@@ -2,13 +2,15 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20&height=180&section=header&text=Yatube%20API&fontSize=70&fontAlignY=35&desc=REST%20API%20on%20Django%20%7C%20Yandex%20Practicum&descAlignY=55&descSize=18" alt="Banner" width="100%">
 
+<br>
+
 <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
 <img src="https://img.shields.io/badge/Django-3.2.16-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
 <img src="https://img.shields.io/badge/DRF-3.12.4-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django REST Framework">
 <img src="https://img.shields.io/badge/SimpleJWT-4.7.2-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="SimpleJWT">
 <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
 
-<br>
+<br><br>
 
 <img src="https://img.shields.io/badge/Pytest-6.2.4-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest">
 <img src="https://img.shields.io/badge/django--filter-2.4.0-092E20?style=for-the-badge&logo=django&logoColor=white" alt="django-filter">
@@ -17,273 +19,368 @@
 
 <br><br>
 
-<h2>🔌 Yatube API — финальная версия REST API</h2>
+<h2>🔌 Yatube API — REST API для социальной сети</h2>
 
 <p><b>Учебный проект в рамках курса «Python-разработчик» от Яндекс Практикума</b></p>
 
 </div>
 
-<hr>
+---
 
-<h2>📖 О проекте</h2>
+## 📖 О проекте
 
-<p><b>Yatube API</b> — финальная версия REST API для социальной сети блогов. Пользователи смогут публиковать посты, оставлять комментарии, подписываться на других авторов и объединять записи в сообщества. API строится на <b>Django REST Framework</b> с аутентификацией по <b>JWT-токенам</b>.</p>
+**Yatube API** — REST API для социальной сети блогов, построенный на **Django REST Framework**.
 
-<p>На текущем этапе реализованы <b>базовые модели</b>, подключено приложение <code>api</code>, подготовлены тесты и коллекция Postman. Реализация вьюх, сериализаторов и маршрутизации — в процессе.</p>
+Проект предоставляет основу для работы с публикациями, комментариями, сообществами и подписками на авторов. Для аутентификации предусмотрено использование **JWT-токенов**.
 
-<hr>
+На текущем этапе реализована базовая структура проекта: модели публикаций и комментариев, приложение API, настройки REST Framework, тестовая инфраструктура и коллекция запросов для Postman.
 
-<h2>✅ Что уже сделано</h2>
+Часть функциональности находится в разработке: сериализаторы, ViewSet'ы, маршрутизация, JWT-эндпоинты, права доступа, пагинация, фильтрация и работа с изображениями.
 
-<ul>
-  <li>Django-проект с приложениями <code>api</code> и <code>posts</code>.</li>
-  <li>Модель <code>Post</code> — посты с полями <code>text</code>, <code>pub_date</code>, <code>author</code>, <code>image</code>.</li>
-  <li>Модель <code>Comment</code> — комментарии с полями <code>author</code>, <code>post</code>, <code>text</code>, <code>created</code>.</li>
-  <li>Подключён <code>rest_framework</code> и <code>rest_framework_simplejwt</code>.</li>
-  <li>Настроены права по умолчанию: <code>IsAuthenticated</code> для всех эндпоинтов.</li>
-  <li>Подготовлены тесты: JWT, посты, комментарии, группы, подписки.</li>
-  <li>Готова коллекция Postman с инструкцией и bash-скриптом для подготовки данных.</li>
-</ul>
+---
 
-<hr>
+## ✨ Возможности проекта
 
-<h2>🚧 Что в разработке</h2>
+### ✅ Уже реализовано
 
-<ul>
-  <li>Модель <code>Group</code> — сообщества.</li>
-  <li>Модель <code>Follow</code> — подписки на авторов.</li>
-  <li>Сериализаторы для <code>Post</code>, <code>Comment</code>, <code>Group</code>, <code>Follow</code>.</li>
-  <li>ViewSet'ы и маршрутизация API.</li>
-  <li>JWT-аутентификация (эндпоинты <code>jwt/create/</code> и <code>jwt/refresh/</code>).</li>
-  <li>Права доступа: редактирование и удаление только автором.</li>
-  <li>Пагинация и фильтрация через <code>django-filter</code>.</li>
-  <li>Настройка <code>MEDIA_URL</code> и <code>MEDIA_ROOT</code> для загрузки изображений.</li>
-  <li>Настройка админки для моделей <code>Post</code> и <code>Comment</code>.</li>
-</ul>
+* Django-проект с приложениями `api` и `posts`.
+* Модель `Post`.
+* Модель `Comment`.
+* Подключение Django REST Framework.
+* Подключение `djangorestframework-simplejwt`.
+* Базовые настройки прав доступа.
+* Тестовая инфраструктура на `pytest`.
+* Фикстуры пользователей и тестовых данных.
+* Тесты для постов, комментариев, групп, подписок и JWT.
+* Postman-коллекция для проверки API.
+* Bash-скрипт для подготовки тестовых данных.
 
-<hr>
+### 🚧 В разработке
 
-<h2>🗃️ Модели данных</h2>
+* Модель `Group` для сообществ.
+* Модель `Follow` для подписок.
+* Сериализаторы для всех API-моделей.
+* ViewSet'ы и маршрутизация.
+* JWT-эндпоинты:
 
-<div align="center">
+  * `jwt/create/`
+  * `jwt/refresh/`
+* Разграничение прав доступа.
+* Редактирование и удаление объектов только их авторами.
+* Пагинация.
+* Фильтрация через `django-filter`.
+* Работа с загружаемыми изображениями.
+* Настройка `MEDIA_URL` и `MEDIA_ROOT`.
+* Расширение административной панели.
 
-<table>
-  <thead>
-    <tr>
-      <th align="left">Модель</th>
-      <th align="left">Поля</th>
-      <th align="left">Статус</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><b>Post</b></td>
-      <td><code>text</code>, <code>pub_date</code>, <code>author</code>, <code>image</code></td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><b>Comment</b></td>
-      <td><code>author</code>, <code>post</code>, <code>text</code>, <code>created</code></td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><b>Group</b></td>
-      <td><code>title</code>, <code>slug</code>, <code>description</code></td>
-      <td>🚧</td>
-    </tr>
-    <tr>
-      <td><b>Follow</b></td>
-      <td><code>user</code>, <code>following</code></td>
-      <td>🚧</td>
-    </tr>
-  </tbody>
-</table>
+---
 
-</div>
+## 🗃️ Модели данных
 
-<hr>
+| Модель      | Основные поля                         | Статус |
+| ----------- | ------------------------------------- | :----: |
+| **Post**    | `text`, `pub_date`, `author`, `image` |    ✅   |
+| **Comment** | `author`, `post`, `text`, `created`   |    ✅   |
+| **Group**   | `title`, `slug`, `description`        |   🚧   |
+| **Follow**  | `user`, `following`                   |   🚧   |
 
-<h2>⚙️ Настройки REST Framework</h2>
+### 📝 Post
 
-<p>В <code>settings.py</code> заданы права по умолчанию:</p>
+Модель публикации содержит:
 
-<pre><code>REST_FRAMEWORK = {
+* текст поста;
+* дату публикации;
+* автора;
+* изображение.
+
+### 💬 Comment
+
+Комментарий связан с конкретным постом и содержит:
+
+* автора;
+* пост;
+* текст комментария;
+* дату создания.
+
+### 👥 Group
+
+Будущая модель сообщества с названием, уникальным `slug` и описанием.
+
+### 🔔 Follow
+
+Будущая модель подписки одного пользователя на другого.
+
+---
+
+## ⚙️ Настройки REST Framework
+
+В проекте настроены права доступа по умолчанию:
+
+```python
+REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-}</code></pre>
+}
+```
 
-<p>То есть все эндпоинты по умолчанию доступны только авторизованным пользователям. JWT-аутентификация через <code>djangorestframework-simplejwt</code> пока не подключена.</p>
+Таким образом, эндпоинты API по умолчанию доступны только авторизованным пользователям.
 
-<hr>
+> **Важно:** несмотря на наличие `djangorestframework-simplejwt` среди зависимостей проекта, подключение JWT-аутентификации и соответствующих эндпоинтов находится в разработке.
 
-<h2>🛠️ Технологии</h2>
+---
 
-<div align="center">
+## 🧪 Тестовая инфраструктура
 
-<table>
-  <thead>
-    <tr>
-      <th align="left">Технология</th>
-      <th align="left">Версия</th>
-      <th align="left">Назначение</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td><b>Python</b></td><td>3.10+</td><td>Язык разработки</td></tr>
-    <tr><td><b>Django</b></td><td>3.2.16</td><td>Веб-фреймворк</td></tr>
-    <tr><td><b>Django REST Framework</b></td><td>3.12.4</td><td>Построение REST API</td></tr>
-    <tr><td><b>djangorestframework-simplejwt</b></td><td>4.7.2</td><td>JWT-аутентификация</td></tr>
-    <tr><td><b>django-filter</b></td><td>2.4.0</td><td>Фильтрация queryset'ов</td></tr>
-    <tr><td><b>Pillow</b></td><td>9.3.0</td><td>Работа с изображениями</td></tr>
-    <tr><td><b>PyJWT</b></td><td>2.1.0</td><td>Работа с JWT-токенами</td></tr>
-    <tr><td><b>SQLite</b></td><td>—</td><td>База данных</td></tr>
-    <tr><td><b>Pytest</b></td><td>6.2.4</td><td>Тестирование</td></tr>
-    <tr><td><b>pytest-django</b></td><td>4.4.0</td><td>Интеграция pytest с Django</td></tr>
-    <tr><td><b>requests</b></td><td>2.26.0</td><td>HTTP-запросы (для тестов)</td></tr>
-    <tr><td><b>Postman</b></td><td>—</td><td>Ручное тестирование эндпоинтов</td></tr>
-  </tbody>
-</table>
+Для тестирования используется связка:
 
-</div>
+* **Pytest**
+* **pytest-django**
+* Django Test Framework
+* собственные фикстуры проекта
 
-<hr>
+Тесты разделены по функциональным областям:
 
-<h2>📂 Структура проекта</h2>
+| Файл              | Назначение             |
+| ----------------- | ---------------------- |
+| `test_post.py`    | Работа с постами       |
+| `test_comment.py` | Работа с комментариями |
+| `test_group.py`   | Работа с сообществами  |
+| `test_follow.py`  | Подписки на авторов    |
+| `test_jwt.py`     | JWT-аутентификация     |
 
-<pre><code>api-final-yatube-ad/
+Фикстуры находятся в каталоге `tests/fixtures/`:
+
+* `fixture_user.py` — тестовые пользователи;
+* `fixture_data.py` — тестовые данные.
+
+Общие настройки pytest находятся в `tests/conftest.py`.
+
+---
+
+## 📬 Postman
+
+В каталоге `postman_collection/` находится готовая коллекция запросов для ручного тестирования API.
+
+```text
+postman_collection/
+├── API_for_yatube.postman_collection.json
+├── README.md
+└── set_up_data.sh
+```
+
+### Быстрый сценарий
+
+1. Подготовить тестовые данные.
+2. Запустить Django-сервер.
+3. Импортировать коллекцию в Postman.
+4. Запустить коллекцию через `Run collection`.
+
+> ⚠️ Скрипт `set_up_data.sh` предварительно очищает базу данных, поэтому не запускайте его на базе с важными данными.
+
+---
+
+## 📂 Структура проекта
+
+```text
+api-final-yatube-ad/
 ├── postman_collection/
-│   ├── API_for_yatube.postman_collection.json  # Коллекция запросов
-│   ├── README.md                               # Инструкция по запуску
-│   └── set_up_data.sh                          # Скрипт для фикстур
+│   ├── API_for_yatube.postman_collection.json
+│   ├── README.md
+│   └── set_up_data.sh
+│
 ├── tests/
 │   ├── fixtures/
 │   │   ├── __init__.py
-│   │   ├── fixture_data.py      # Фикстуры данных (посты, комментарии)
-│   │   └── fixture_user.py      # Фикстуры пользователей
+│   │   ├── fixture_data.py
+│   │   └── fixture_user.py
 │   ├── __init__.py
-│   ├── conftest.py              # Общие настройки pytest
-│   ├── test_comment.py          # Тесты комментариев
-│   ├── test_follow.py           # Тесты подписок
-│   ├── test_group.py            # Тесты сообществ
-│   ├── test_jwt.py              # Тесты JWT-аутентификации
-│   └── test_post.py             # Тесты постов
+│   ├── conftest.py
+│   ├── test_comment.py
+│   ├── test_follow.py
+│   ├── test_group.py
+│   ├── test_jwt.py
+│   └── test_post.py
+│
 ├── yatube_api/
-│   ├── api/                     # Приложение API
+│   ├── api/
 │   ├── posts/
-│   │   ├── migrations/          # Миграции БД
+│   │   ├── migrations/
 │   │   ├── __init__.py
-│   │   ├── admin.py             # Админка (заготовка)
-│   │   ├── apps.py              # Конфигурация приложения
-│   │   ├── models.py            # Модели Post, Comment
-│   │   ├── tests.py             # Тесты приложения
-│   │   └── views.py             # Вьюхи (в разработке)
-│   ├── yatube_api/              # Настройки проекта (settings, urls, wsgi)
-│   └── manage.py                # Управляющий скрипт Django
-├── README.md                    # Документация
-├── pytest.ini                   # Конфигурация pytest
-├── requirements.txt             # Зависимости проекта
-└── setup.cfg                    # Конфигурация flake8</code></pre>
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   ├── yatube_api/
+│   └── manage.py
+│
+├── .gitignore
+├── README.md
+├── pytest.ini
+├── requirements.txt
+└── setup.cfg
+```
 
-<hr>
+---
 
-<h2>🚀 Запуск</h2>
+## 🛠️ Технологический стек
 
-<h3>Требования</h3>
-<ul>
-  <li><b>Python</b> 3.10 или выше.</li>
-  <li><b>pip</b> для установки зависимостей.</li>
-  <li><b>Bash</b> для запуска скрипта подготовки данных.</li>
-</ul>
+| Технология                        | Версия | Назначение                 |
+| --------------------------------- | -----: | -------------------------- |
+| **Python**                        |  3.10+ | Язык разработки            |
+| **Django**                        | 3.2.16 | Веб-фреймворк              |
+| **Django REST Framework**         | 3.12.4 | Создание REST API          |
+| **djangorestframework-simplejwt** |  4.7.2 | JWT-аутентификация         |
+| **django-filter**                 |  2.4.0 | Фильтрация queryset'ов     |
+| **Pillow**                        |  9.3.0 | Работа с изображениями     |
+| **PyJWT**                         |  2.1.0 | Работа с JWT               |
+| **SQLite**                        |      — | База данных                |
+| **Pytest**                        |  6.2.4 | Тестирование               |
+| **pytest-django**                 |  4.4.0 | Интеграция Pytest с Django |
+| **requests**                      | 2.26.0 | HTTP-запросы в тестах      |
+| **Postman**                       |      — | Ручное тестирование API    |
 
-<h3>Шаги</h3>
-<ol>
-  <li>
-    <b>Клонируйте репозиторий:</b>
-    <pre><code>git clone https://github.com/DarkSwordman999/api-final-yatube-ad.git
-cd api-final-yatube-ad</code></pre>
-  </li>
-  <li>
-    <b>Создайте и активируйте виртуальное окружение:</b>
-    <pre><code>python -m venv venv
+---
 
-# Windows:
+## 🚀 Установка и запуск
+
+### Требования
+
+* Python **3.10+**
+* `pip`
+* Bash — для запуска `set_up_data.sh`
+
+<details>
+<summary><b>1. Клонирование репозитория</b></summary>
+
+```bash
+git clone https://github.com/DarkSwordman999/api-final-yatube-ad.git
+cd api-final-yatube-ad
+```
+
+</details>
+
+<details>
+<summary><b>2. Создание виртуального окружения</b></summary>
+
+**Windows:**
+
+```bash
+python -m venv venv
 venv\Scripts\activate
+```
 
-# macOS / Linux:
-source venv/bin/activate</code></pre>
-  </li>
-  <li>
-    <b>Установите зависимости:</b>
-    <pre><code>pip install -r requirements.txt</code></pre>
-  </li>
-  <li>
-    <b>Подготовьте данные для Postman-коллекции:</b>
-    <pre><code>cd postman_collection
-bash set_up_data.sh</code></pre>
-    <p><b>Внимание:</b> скрипт предварительно очищает базу данных.</p>
-  </li>
-  <li>
-    <b>Запустите сервер разработки:</b>
-    <pre><code>cd ../yatube_api
-python manage.py runserver</code></pre>
-  </li>
-</ol>
+**macOS / Linux:**
 
-<hr>
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-<h2>📬 Postman-коллекция</h2>
+</details>
 
-<p>В папке <code>postman_collection/</code> лежит файл <code>API_for_yatube.postman_collection.json</code> — набор заранее подготовленных запросов для проверки работы API. Подробная инструкция по импорту и запуску — в <a href="./postman_collection/README.md">README коллекции</a>.</p>
+<details>
+<summary><b>3. Установка зависимостей</b></summary>
 
-<p>Кратко:</p>
-<ol>
-  <li>Запустить <code>set_up_data.sh</code> для подготовки данных.</li>
-  <li>Запустить тестовый сервер Django.</li>
-  <li>Импортировать коллекцию в Postman (<code>File → Import</code>).</li>
-  <li>Запустить коллекцию через <code>Run collection</code>.</li>
-</ol>
+```bash
+pip install -r requirements.txt
+```
 
-<hr>
+</details>
 
-<h2>🧪 Тестирование</h2>
+<details>
+<summary><b>4. Подготовка данных</b></summary>
 
-<p>Тесты запускаются через <b>pytest</b> с плагином <b>pytest-django</b>. Конфигурация — в <code>pytest.ini</code>.</p>
+Перейдите в каталог Postman и запустите скрипт:
 
-<pre><code>pytest</code></pre>
+```bash
+cd postman_collection
+bash set_up_data.sh
+```
 
-<p>Что проверяется:</p>
-<ul>
-  <li><b><code>test_jwt.py</code></b> — JWT-аутентификация.</li>
-  <li><b><code>test_post.py</code></b> — посты.</li>
-  <li><b><code>test_comment.py</code></b> — комментарии.</li>
-  <li><b><code>test_group.py</code></b> — сообщества.</li>
-  <li><b><code>test_follow.py</code></b> — подписки на авторов.</li>
-</ul>
+> ⚠️ Скрипт очищает базу данных перед подготовкой тестовых данных.
 
-<p>Фикстуры:</p>
-<ul>
-  <li><b><code>fixtures/fixture_user.py</code></b> — тестовые пользователи.</li>
-  <li><b><code>fixtures/fixture_data.py</code></b> — тестовые данные (посты, комментарии).</li>
-</ul>
+</details>
 
-<p><b>Важно:</b> в <code>conftest.py</code> есть встроенная проверка — тесты не пройдут, если README остался в виде стандартной заглушки. Этот файл уже оформлен.</p>
+<details>
+<summary><b>5. Запуск Django</b></summary>
 
-<hr>
+```bash
+cd ../yatube_api
+python manage.py runserver
+```
 
-<h2>🧹 Линтинг</h2>
+После запуска проект будет доступен по адресу:
 
-<p>Код проверяется линтером <b>flake8</b>. Настройки — в файле <code>setup.cfg</code>.</p>
+```text
+http://127.0.0.1:8000/
+```
 
-<pre><code>flake8 .</code></pre>
+</details>
 
-<hr>
+---
 
-<h2>👤 Автор</h2>
+## 🧪 Запуск тестов
+
+Для запуска полного набора тестов:
+
+```bash
+pytest
+```
+
+Для подробного вывода:
+
+```bash
+pytest -v
+```
+
+Конфигурация находится в `pytest.ini`:
+
+```ini
+python_paths = yatube_api/
+DJANGO_SETTINGS_MODULE = yatube_api.settings
+testpaths = tests/
+addopts = -vv -p no:cacheprovider
+```
+
+---
+
+## 🧹 Линтинг
+
+Для проверки качества кода используется **flake8**.
+
+Запуск:
+
+```bash
+flake8 .
+```
+
+Основные настройки находятся в `setup.cfg`.
+
+В конфигурации учитываются:
+
+* максимальная цикломатическая сложность — `10`;
+* исключение `tests/`;
+* исключение директорий миграций;
+* исключение виртуальных окружений;
+* дополнительные правила проекта.
+
+---
+
+## 📄 Лицензия
+
+Проект создан в образовательных целях в рамках курса **«Python-разработчик» от Яндекс Практикума**.
+
+---
+
+## 👤 Автор
 
 <div align="center">
 
-<p><b>DarkSwordman999</b></p>
+<b>DarkSwordman999</b>
+
+<br><br>
 
 <a href="https://github.com/DarkSwordman999">
   <img src="https://img.shields.io/badge/GitHub-DarkSwordman999-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
@@ -291,12 +388,33 @@ python manage.py runserver</code></pre>
 
 </div>
 
-<hr>
+---
 
 <div align="center">
 
-<h3>🎓 Проект создан в рамках курса «Python-разработчик» от <a href="https://practicum.yandex.ru/">Яндекс Практикума</a></h3>
+### ⭐ Понравился проект?
 
-<p><i>Учебный проект. Создан в образовательных целях.</i></p>
+Если **Yatube API** оказался полезным или интересным,
+**поставьте ⭐ репозиторию на GitHub** — это лучшая поддержка проекта!
+
+<br>
+
+<a href="https://github.com/DarkSwordman999/api-final-yatube-ad">
+  <img src="https://img.shields.io/badge/⭐%20Star%20repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="Star repository">
+</a>
+
+<br><br>
+
+<i>Спасибо за интерес к проекту! 🚀</i>
+
+</div>
+
+---
+
+<div align="center">
+
+### 🎓 Яндекс Практикум
+
+<i>Учебный проект, созданный в рамках курса «Python-разработчик».</i>
 
 </div>
